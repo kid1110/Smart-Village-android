@@ -1,2 +1,2 @@
 # Smart-Village-android
-只会乡村安卓端
+智慧乡村安卓端
