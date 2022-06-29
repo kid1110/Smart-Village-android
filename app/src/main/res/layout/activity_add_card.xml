@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCardActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_card_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        app:helperText="@string/add_card_helper"
+        app:counterMaxLength="50"
+        app:counterEnabled="true"
+        app:errorTextAppearance="@string/card_title_toolong"
+        app:errorEnabled="true"
+        android:hint="@string/add_card_title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/add_card_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            app:helperText="@string/add_card_content_helper"
+            app:counterMaxLength="1000"
+            app:counterEnabled="true"
+            app:errorTextAppearance="@string/card_title_toolong"
+            app:errorEnabled="true"
+            android:hint="@string/add_card_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:isScrollContainer="true"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:lines="6"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/add_photos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:icon = "@drawable/ic_add_fill0_wght400_grad0_opsz48"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="500dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_photos"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        />
+    <Button
+        android:id="@+id/add_finish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:icon="@drawable/ic_done_fill0_wght400_grad0_opsz48"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="500dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_finish"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

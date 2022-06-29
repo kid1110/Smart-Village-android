@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">SmartVillage</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="menu_home">首页</string>
+    <string name="menu_info">公告</string>
+    <string name="menu_me">个人</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="home_title">title</string>
+    <string name="dashboard_test">hello</string>
+    <string name="add_dashboard">发布公告</string>
+    <string name="title_activity_add_dash_board">AddDashBoardActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_add_card">addCardActivity</string>
+    <string name="add_card_title">标题</string>
+    <string name="add_card_helper">请输入公告的标题</string>
+    <string name="card_title_toolong">标题过长</string>
+    <string name="add_card_content">内容</string>
+    <string name="add_card_content_helper">请输入内容</string>
+    <string name="add_finish">添加完成</string>
+    <string name="add_photos">添加图片</string>
+    <string name="page_title">公告内容</string>
+    <string name="more">更多</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="delete_card_confirm">删除公告</string>
+    <string name="delete_card_message">是否确认删除公告，一旦确认无法撤回</string>
+    <string name="delete_card_cancel">取消</string>
+    <string name="delete_card_accept">确定</string>
+    <string name="newPassword_toolong">密码过长</string>
+    <string name="new_password_helper">请输入新的密码</string>
+    <string name="new_password">新的密码</string>
+    <string name="old_password_helper">请输入旧的密码</string>
+    <string name="old_password_toolong">旧密码太长</string>
+    <string name="old_password">旧密码</string>
+    <string name="update_finish">完成</string>
+</resources>
