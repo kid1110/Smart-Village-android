@@ -13,9 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.smartvillage.AddCardActivity;
-import com.example.smartvillage.MainActivity;
-import com.example.smartvillage.MenuActivity;
+import com.example.smartvillage.OrderListActivity;
 import com.example.smartvillage.R;
 import com.example.smartvillage.UpdatePasswordActivity;
 import com.example.smartvillage.databinding.FragmentNotificationsBinding;
@@ -50,6 +48,13 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), UpdatePasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+        appointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), OrderListActivity.class);
                 startActivity(intent);
             }
         });

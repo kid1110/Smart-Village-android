@@ -6,6 +6,9 @@ public enum Status {
     GetUserInfoError(-402,"获取用户信息失败"),
     AnoterDeviceHasLogin(-411,"另一台设备已经登录"),
     JwtError(-410,"token验证失败"),
+    SendMessage(0,"请求websocket通信"),
+    SendWebSocketList(2,"传送列表"),
+    SendWebSocketMsg(3,"传送信息"),
     Success(1,"成功");
 
     private int code;

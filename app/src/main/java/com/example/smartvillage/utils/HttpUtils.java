@@ -16,4 +16,7 @@ public class HttpUtils {
         GsonConverterFactory gsonConverterFactory = GsonConverterFactory.create();
         return new Retrofit.Builder().baseUrl("http://112.74.93.38:8899/").client(client).addConverterFactory(gsonConverterFactory).build();
     }
+
+
+
 }

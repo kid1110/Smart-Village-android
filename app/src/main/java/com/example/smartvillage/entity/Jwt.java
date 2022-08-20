@@ -3,18 +3,20 @@ package com.example.smartvillage.entity;
 import java.io.Serializable;
 
 public class Jwt implements Serializable {
+    private Integer uid;
     private Integer exp;
     private Integer iat;
     private  String uuid;
     private String username;
     private Integer admin;
 
-    public Jwt(Integer exp, Integer iat, String uuid, String username, Integer admin) {
+    public Jwt(Integer uid,Integer exp, Integer iat, String uuid, String username, Integer admin) {
         this.exp = exp;
         this.iat = iat;
         this.uuid = uuid;
         this.username = username;
         this.admin = admin;
+        this.uid = uid;
     }
 
     public Integer getExp() {
@@ -57,10 +59,19 @@ public class Jwt implements Serializable {
         this.admin = admin;
     }
 
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
+
     @Override
     public String toString() {
         return "Jwt{" +
-                "exp=" + exp +
+                "uid=" + uid +
+                ", exp=" + exp +
                 ", iat=" + iat +
                 ", uuid='" + uuid + '\'' +
                 ", username='" + username + '\'' +

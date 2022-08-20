@@ -12,6 +12,8 @@ android {
         targetSdk 32
         versionCode 5
         versionName "5"
+        renderscriptTargetApi 32
+        renderscriptSupportModeEnabled true
 
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -65,6 +67,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'  //Retrofit-gson的依赖项
     implementation 'com.lucasurbas:listitemview:1.1.1'
     implementation 'com.auth0:java-jwt:3.19.2'
+    implementation 'com.github.stfalcon-studio:Chatkit:0.4.1'
+    implementation 'org.java-websocket:Java-WebSocket:1.5.2'
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
+    implementation 'com.github.goka.blurredgridmenu:blurredgridmenu:1.0.2'
+    implementation 'com.king.zxing:zxing-lite:1.1.7-androidx'
 
 
 

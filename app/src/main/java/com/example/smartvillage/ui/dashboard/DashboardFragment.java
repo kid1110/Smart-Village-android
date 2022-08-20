@@ -44,6 +44,7 @@ public class DashboardFragment extends Fragment {
     private CircularProgressIndicator progressIndicator;
     private SharedPreferences sharedPreferences;
     private TextView dashtip;
+    private String token;
 
 
 
@@ -59,7 +60,7 @@ public class DashboardFragment extends Fragment {
             root = inflater.inflate(R.layout.fragment_dashboard,container,false);
         }
         sharedPreferences = getContext().getSharedPreferences("user_info", Context.MODE_PRIVATE);
-        String token = sharedPreferences.getString("user",null);
+        token = sharedPreferences.getString("user",null);
         System.out.println("fra"+token);
 
         //取用户信息
@@ -82,11 +83,6 @@ public class DashboardFragment extends Fragment {
         }
         //等待cardRecycleView加载完
 
-
-
-
-
-
         return root;
 
     }
@@ -99,7 +95,7 @@ public class DashboardFragment extends Fragment {
     }
     private void initCard(){
         dashBoardCardList.clear();
-        dashBoardCardList = CardHelper.GetCards();
+        dashBoardCardList = CardHelper.GetCards(token);
         if (dashBoardCardList == null){
             dashBoardCardList = new ArrayList<>();
         }

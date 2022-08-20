@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckOrderActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/check_illness_where"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="地点"
+            app:helperText="请输入上门地点"
+            app:counterMaxLength="50"
+            app:counterEnabled="true"
+            app:errorTextAppearance="@string/illness_where_toolong"
+            app:errorEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/check_illness_where_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/add_illness_time"
+            app:icon = "@drawable/ic_add_fill0_wght400_grad0_opsz48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加日期"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            />
+        <TextView
+            android:id="@+id/illness_show_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择日期">
+        </TextView>
+        <Button
+            android:id="@+id/illness__order_confirm"
+            app:icon = "@drawable/ic_done_fill0_wght400_grad0_opsz48"
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确认预约"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

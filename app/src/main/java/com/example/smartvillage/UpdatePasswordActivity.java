@@ -11,7 +11,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.smartvillage.entity.Jwt;
@@ -72,7 +71,7 @@ public class UpdatePasswordActivity extends AppCompatActivity {
                         System.out.println(userFromDataBase);
                         if (userFromDataBase.getCode() == Status.Success.getCode()){
                             //验证本人成功则尝试修改密码
-                            BaseResponse baseResponse = UserHelper.updatePassword(jwtInfo.getUsername(), newPasswordAgainText);
+                            BaseResponse baseResponse = UserHelper.updatePassword(token,jwtInfo.getUsername(), newPasswordAgainText);
                             System.out.println(baseResponse);
                             if(baseResponse.getCode() == Status.Success.getCode()){
                                 Looper.prepare();

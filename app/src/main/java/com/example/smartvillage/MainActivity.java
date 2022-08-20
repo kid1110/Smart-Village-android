@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("username",username.getText().toString());
                 Log.i("password",password.getText().toString());
 
-                System.out.println("main: "+token);
                     //第一次登录请求token
                     new Thread(()->{
 
@@ -53,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                             Log.i(Integer.toString(Status.Success.getCode()),Status.Success.getMsg());
 
                             token = baseResponse.getData();
-                            System.out.println(token);
                             //存入用户信息
                             edit.clear();
                             edit.putString("user",token).apply();

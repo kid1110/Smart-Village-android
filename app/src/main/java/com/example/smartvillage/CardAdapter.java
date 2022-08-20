@@ -2,6 +2,7 @@ package com.example.smartvillage;
 
 import android.content.Context;
 import android.content.Intent;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             title = view.findViewById(R.id.cardTitle);
             author = view.findViewById(R.id.cardAuthor);
             shotInfo = view.findViewById(R.id.cardContent);
+
+
+
 
             //绑定点击事件
             view.setOnClickListener(new View.OnClickListener() {

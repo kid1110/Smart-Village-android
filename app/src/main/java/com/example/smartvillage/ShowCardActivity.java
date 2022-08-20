@@ -1,18 +1,21 @@
 package com.example.smartvillage;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,9 +24,6 @@ import com.bumptech.glide.Glide;
 import com.example.smartvillage.dto.DCard;
 import com.example.smartvillage.entity.Card;
 import com.example.smartvillage.entity.Jwt;
-import com.example.smartvillage.entity.User;
-import com.example.smartvillage.utils.BitmapUtils;
-import com.example.smartvillage.utils.JsonUtils;
 import com.example.smartvillage.utils.JwtUtils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -33,8 +33,9 @@ public class ShowCardActivity extends AppCompatActivity {
     private Jwt user;
     private Card card;
     private MaterialAlertDialogBuilder materialAlertDialogBuilder;
-
     private ImageView cardImage;
+    private String token;
+
 
 
 
@@ -44,11 +45,11 @@ public class ShowCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_card);
 
         sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
-        String userJson = sharedPreferences.getString("user",null);
+        token = sharedPreferences.getString("user",null);
         materialAlertDialogBuilder = new MaterialAlertDialogBuilder(this);
 
         //取用户信息
-       user = (Jwt) JwtUtils.getJwtInfo(userJson);
+       user = (Jwt) JwtUtils.getJwtInfo(token);
 
         Intent intent = this.getIntent();
         card = (Card) intent.getSerializableExtra("showCard");
@@ -70,6 +71,13 @@ public class ShowCardActivity extends AppCompatActivity {
         time.setText(card.getTimeStamp());
         content.setText(card.getContent());
         System.out.println(card);
+        cardImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bitmap bitmap = ((BitmapDrawable) cardImage.getDrawable()).getBitmap();
+                bigImageLoader(bitmap);
+            }
+        });
 
     }
 
@@ -114,7 +122,7 @@ public class ShowCardActivity extends AppCompatActivity {
                 System.out.println("dia"+did);
                 //对后台进行请求
                 new Thread(()->{
-                    boolean judge = CardHelper.deleteCard(did);
+                    boolean judge = CardHelper.deleteCard(token,did);
                     if(judge){
                         Looper.prepare();
                         Toast.makeText(ShowCardActivity.this,"删除公告成功",Toast.LENGTH_LONG).show();
@@ -141,6 +149,21 @@ public class ShowCardActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    private void bigImageLoader(Bitmap bitmap){
+        final Dialog dialog = new Dialog(this);
+        ImageView image = new ImageView(this);
+        image.setImageBitmap(bitmap);
+        dialog.setContentView(image);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.show();
+        image.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                dialog.cancel();
+            }
+        });
+    }
+
 
 
 }

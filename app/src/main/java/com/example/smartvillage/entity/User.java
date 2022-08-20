@@ -1,11 +1,13 @@
 package com.example.smartvillage.entity;
 
+import com.stfalcon.chatkit.commons.models.IUser;
+
 import java.io.Serializable;
 
 
 
 
-public class User implements Serializable {
+public class User implements Serializable{
     private int uid;
     private  String username;
     private  String password;
@@ -60,4 +62,6 @@ public class User implements Serializable {
                 ", admin=" + admin +
                 '}';
     }
+
+
 }

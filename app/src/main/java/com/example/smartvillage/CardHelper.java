@@ -31,8 +31,8 @@ public class CardHelper {
         httpService = retrofit.create(HttpService.class);
     }
 
-    public static List<Card> GetCards(){
-        Call<ResponseBody> allCards = httpService.getAllCards();
+    public static List<Card> GetCards(String token){
+        Call<ResponseBody> allCards = httpService.getAllCards(token);
         try {
             Response<ResponseBody> execute = allCards.execute();
             Type cardListType = new TypeToken<BaseResponse<List<Card>>>(){}.getType();
@@ -49,10 +49,10 @@ public class CardHelper {
         }
         return null;
     }
-    public static Boolean InsertCard(String title, String content, String author, String image){
+    public static Boolean InsertCard(String token,String title, String content, String author, String image){
         long l = System.currentTimeMillis();
         String timeStamp = TimeStampUtils.stampToDate(Long.toString(l));
-        Call<ResponseBody> call = httpService.insertCard(image,title,author,content,timeStamp);
+        Call<ResponseBody> call = httpService.insertCard(token,image,title,author,content,timeStamp);
         try {
             Response<ResponseBody> execute = call.execute();
             System.out.println("insert"+execute);
@@ -67,8 +67,8 @@ public class CardHelper {
         }
         return false;
     }
-    public static boolean deleteCard(Integer did){
-        Call<ResponseBody> responseBodyCall = httpService.deleteCard(did);
+    public static boolean deleteCard(String token,Integer did){
+        Call<ResponseBody> responseBodyCall = httpService.deleteCard(token,did);
         try {
             Response<ResponseBody> execute = responseBodyCall.execute();
             BaseResponse baseResponse = new Gson().fromJson(execute.body().string(), BaseResponse.class);
@@ -82,8 +82,8 @@ public class CardHelper {
         }
         return false;
     }
-    public static boolean updateCard(DCard dCard){
-        Call<ResponseBody> call = httpService.updateCard(dCard);
+    public static boolean updateCard(String token,DCard dCard){
+        Call<ResponseBody> call = httpService.updateCard(token,dCard);
         long l = System.currentTimeMillis();
         String timeStamp = TimeStampUtils.stampToDate(Long.toString(l));
         dCard.setTimeStamp(timeStamp);

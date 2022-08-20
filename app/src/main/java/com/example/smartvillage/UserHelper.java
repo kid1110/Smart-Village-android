@@ -94,8 +94,9 @@ public class UserHelper {
             throw new Exception("密码需要小于10大于1");
         }
     }
-    public static BaseResponse updatePassword(String username,String newPassword){
-        Call<ResponseBody> call = httpService.updatePassword(username, newPassword);
+    public static BaseResponse updatePassword(String token,String username,String newPassword){
+        System.out.println(username);
+        Call<ResponseBody> call = httpService.updatePassword(token,username, newPassword);
         try {
             Response<ResponseBody> execute = call.execute();
             return new Gson().fromJson(execute.body().string(),BaseResponse.class);

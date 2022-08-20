@@ -47,7 +47,11 @@
     <string name="more">更多</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="delete_card_confirm">删除公告</string>
+    <string name="delete_order_confirm">取消预定</string>
+    <string name="update_order_confirm">更新预约</string>
     <string name="delete_card_message">是否确认删除公告，一旦确认无法撤回</string>
+    <string name="update_order_message">是否更新预约</string>
+    <string name="delete_order_message">是否确认取消预约，一旦确认无法撤回</string>
     <string name="delete_card_cancel">取消</string>
     <string name="delete_card_accept">确定</string>
     <string name="newPassword_toolong">密码过长</string>
@@ -57,4 +61,37 @@
     <string name="old_password_toolong">旧密码太长</string>
     <string name="old_password">旧密码</string>
     <string name="update_finish">完成</string>
+    <string name="office_hall">办事大厅</string>
+    <string name="village_school">农技课堂</string>
+    <string name="village_taobao">农村淘宝</string>
+    <string name="community">互动社区</string>
+    <string name="hint_enter_a_message">请输入内容</string>
+    <string name="order_id_mock" translatable="false"># 1234–5678</string>
+    <string name="price_mock" translatable="false">$25</string>
+    <string name="requests_count_mock" translatable="false">5</string>
+    <string name="requests_count_badge" translatable="false">REQUESTS</string>
+    <string name="weight_mock" translatable="false">50 oz</string>
+    <string name="weight_badge" translatable="false">WEIGHT</string>
+    <string name="pledge_mock" translatable="false">$150</string>
+    <string name="pledge_badge" translatable="false">价格</string>
+    <string name="sender_badge" translatable="false">SENDER</string>
+    <string name="client_name_mock" translatable="false">Edward Norton</string>
+    <string name="rating_mock" translatable="false">(26)</string>
+    <string name="from_badge" translatable="false">发现地点</string>
+    <string name="to_badge" translatable="false">TO</string>
+    <string name="delivery_date_badge" translatable="false">科普：</string>
+    <string name="delivery_time_mock" translatable="false">6:30 pm</string>
+    <string name="delivery_date_mock" translatable="false">葡萄（学名：Vitis vinifera L.）为葡萄科葡萄属木质藤本植物，小枝圆柱形，有纵棱纹，无毛或被稀疏柔毛，叶卵圆形，圆锥花序密集或疏散，基部分枝发达，果实球形或椭圆形，花期4-5月，果期8-9月。
+葡萄是世界最古老的果树树种之一，葡萄的植物化石发现于第三纪地层中，说明当时已遍布于欧、亚及格陵兰。 [1]  葡萄原产亚洲西部，世界各地均有栽培， [2]  世界各地的葡萄约95%集中分布在北半球。 [3]
+葡萄为著名水果，生食或制葡萄干，并酿酒，酿酒后的酒脚可提酒石酸，根和藤药用能止呕、安胎。</string>
+    <string name="deadline_badge" translatable="false">REQUEST DEADLINE</string>
+    <string name="deadline_time_mock" translatable="false">24 minutes</string>
+    <string name="request_btn_text" translatable="false">REQUEST</string>
+    <string name="btn_annotation_mock" translatable="false">5 people have sent a request</string>
+    <string name="content_from1_mock">W 90th St</string>
+    <string name="content_from2_mock">New York, NY 10025</string>
+    <string name="content_to1_mock">46th Ave</string>
+    <string name="content_to2_mock">Woodside, NY 11101</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="illness_where_toolong">地点名称太长</string>
 </resources>

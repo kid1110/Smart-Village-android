@@ -94,7 +94,7 @@ public class AddCardActivity extends AppCompatActivity {
                     if(dCard == null && !confirmFlag){
                         confirmFlag = true;
                         System.out.println(baseImage);
-                        Boolean judge = CardHelper.InsertCard(title.getText().toString(), content.getText().toString(), jwtInfo.getUsername(), baseImage);
+                        Boolean judge = CardHelper.InsertCard(token,title.getText().toString(), content.getText().toString(), jwtInfo.getUsername(), baseImage);
                         System.out.println(judge);
                         if(judge){
                             Looper.prepare();
@@ -114,7 +114,7 @@ public class AddCardActivity extends AppCompatActivity {
                         if(baseImage != null){
                             dCard.setImage(baseImage);
                         }
-                        boolean judge = CardHelper.updateCard(dCard);
+                        boolean judge = CardHelper.updateCard(token,dCard);
                         if(judge){
                             Looper.prepare();
                             showMsg("更新成功");

@@ -6,17 +6,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Looper;
 import android.widget.Toast;
-import com.example.smartvillage.response.BaseResponse;
-import com.example.smartvillage.result.Status;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
 import com.example.smartvillage.databinding.ActivityMenuBinding;
+import com.example.smartvillage.response.BaseResponse;
+import com.example.smartvillage.result.Status;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -71,9 +73,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void run() {
                 token = sharedPreferences.getString("user",null);
-                System.out.println("menuInit: "+token);
                 BaseResponse<String> stringBaseResponse = UserHelper.userJwtLogin(token);
-                System.out.println("menu: "+stringBaseResponse);
                if(stringBaseResponse.getCode() == Status.AnoterDeviceHasLogin.getCode()){
                     Looper.prepare();
                     anotherDeviceLogin();

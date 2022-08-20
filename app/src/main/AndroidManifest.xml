@@ -25,13 +25,37 @@
         android:theme="@style/Theme.SmartVillage"
         tools:targetApi="31">
         <activity
+            android:name=".OrderListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IllnessCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PayFeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FarmKnowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowCodeActivity"
+            android:exported="false" />
+
+
+
+        <activity
+            android:name=".CommunityActivity"
+            android:exported="false" />
+        <activity
             android:name=".UpdatePasswordActivity"
             android:exported="false" />
 
-        <service
-            android:name=".JwtService"
-            android:enabled="true"
-            android:exported="true" />
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

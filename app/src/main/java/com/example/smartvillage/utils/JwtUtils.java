@@ -33,8 +33,9 @@ public class JwtUtils {
             Integer iat = (Integer) map.get("iat");
             String username = (String) map.get("username");
             String uuid = (String) map.get("uuid");
+            Integer uid = Integer.decode((String) map.get("uid"));
             Integer admin = Integer.decode((String) map.get("admin"));
-            return  new Jwt(exp,iat,uuid,username,admin);
+            return  new Jwt(uid,exp,iat,uuid,username,admin);
         }else{
             return null;
         }
